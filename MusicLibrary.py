@@ -2,23 +2,57 @@ from Track import Track
 import Main  
 import random  
 
-class MusicLibrary:
-    def __init__(self, tracks):
-        self.tracks = [Track.from_dict(track) for track in tracks]
+def merge_sort(tracks):
+    if len(tracks) <= 1:
+        return tracks
 
-    def sort_tracks_by_artist(self):
-        n = len(self.tracks)
-        for i in range(n):
-            for j in range(0, n - i - 1):
-                if self.tracks[j].getArtist().lower() > self.tracks[j + 1].getArtist().lower():
-                    self.tracks[j], self.tracks[j + 1] = self.tracks[j + 1], self.tracks[j]
+    mid = len(tracks) // 2
+    left = merge_sort(tracks[:mid])
+    right = merge_sort(tracks[mid:])
 
-    def get_sorted_tracks(self):
-        self.sort_tracks_by_artist()
-        return self.tracks
+    return merge(left, right)
 
-    def display_sorted_tracks(self):
-        self.sort_tracks_by_artist()
-        print("\nSorted Tracks by Artist Name:")
-        for idx, track in enumerate(self.tracks, start=1):
-            print(f"{idx}. {track.getTitle()} - {track.getArtist()} ({track.getAlbum()}, {track.getDuration()})")
+
+def merge(left, right):
+    sorted_tracks = []
+    while left and right:
+        if left[0]["album"] < right[0]["album"]:
+            sorted_tracks.append(left.pop(0))
+        elif left[0]["album"] > right[0]["album"]:
+            sorted_tracks.append(right.pop(0))
+        else:  
+            if left[0]["artist"] <= right[0]["artist"]:
+                sorted_tracks.append(left.pop(0))
+            else:
+                sorted_tracks.append(right.pop(0))
+
+    sorted_tracks.extend(left)
+    sorted_tracks.extend(right)
+
+    return sorted_tracks
+
+
+def display_sorted_tracks():
+    data = Main.load_data()  
+    tracks = data["tracks"]
+
+
+    unique_tracks = []
+    seen = set()
+    for track in tracks:
+        track_tuple = (track["title"], track["artist"], track["album"], track["duration"])
+        if track_tuple not in seen:
+            seen.add(track_tuple)
+            unique_tracks.append(track)
+
+    sorted_tracks = merge_sort(unique_tracks)
+
+    print("\nSorted Tracks:")
+    for track_data in sorted_tracks:
+        track = Track.from_dict(track_data)  
+        print(
+            f"Track: {track.getTitle()}, Artist: {track.getArtist()}, Album: {track.getAlbum()}\n"
+        )
+
+
+display_sorted_tracks()
