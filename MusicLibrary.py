@@ -47,7 +47,7 @@ def display_sorted_tracks():
 
     sorted_tracks = merge_sort(unique_tracks)
 
-    print("\nSorted Tracks:")
+    print("\nTracks:")
     for track_data in sorted_tracks:
         track = Track.from_dict(track_data)  
         print(
