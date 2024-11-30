@@ -72,7 +72,7 @@ class MusicLibrary:
         seen = set()
 
         for track in self.tracks:
-            track_tuple = (track["title"], track["artist"], track["album"], track["duration"])
+            track_tuple= (track["title"], track["artist"], track["album"], track["duration"])
             if track_tuple not in seen:
                 seen.add(track_tuple)
                 unique_tracks.append(track)
