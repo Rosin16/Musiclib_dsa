@@ -1,59 +1,24 @@
 from Track import Track
-import Main  
-import random  
-
-def merge_sort(tracks):
-    if len(tracks) <= 1:
-        return tracks
-
-    mid = len(tracks) // 2
-    left = merge_sort(tracks[:mid])
-    right = merge_sort(tracks[mid:])
-
-    return merge(left, right)
+import json
+from datetime import datetime
 
 
-def merge(left, right):
-    sorted_tracks = []
-    while left and right:
-        if left[0]["album"] < right[0]["album"]:
-            sorted_tracks.append(left.pop(0))
-        elif left[0]["album"] > right[0]["album"]:
-            sorted_tracks.append(right.pop(0))
-        else:  
-            if left[0]["artist"] <= right[0]["artist"]:
-                sorted_tracks.append(left.pop(0))
-            else:
-                sorted_tracks.append(right.pop(0))
+class MusicLibrary:
+    def __init__(self):
+        self.tracks = self.load_data()
 
-    sorted_tracks.extend(left)
-    sorted_tracks.extend(right)
+    def load_data(self):
+        with open('store.json', 'r') as file:
+            return json.load(file)["tracks"]
 
-    return sorted_tracks
+    def merge_sort(self, tracks, key):
+        if len(tracks) <= 1:
+            return tracks
 
+        mid = len(tracks) // 2
+        left = self.merge_sort(tracks[:mid], key)
+        right = self.merge_sort(tracks[mid:], key)
 
-def display_sorted_tracks():
-    data = Main.load_data()  
-    tracks = data["tracks"]
+        return self.merge(left, right, key)
 
-# nag add kog variables para walay double entries. 
-    unique_tracks = []
-    seen = set()
-
-    for track in tracks:
-        track_tuple = (track["title"], track["artist"], track["album"], track["duration"])
-        if track_tuple not in seen:
-            seen.add(track_tuple)
-            unique_tracks.append(track)
-
-    sorted_tracks = merge_sort(unique_tracks)
-
-    print("\nTracks:")
-    for track_data in sorted_tracks:
-        track = Track.from_dict(track_data)  
-        print(
-            f"Track: {track.getTitle()}, Artist: {track.getArtist()}, Album: {track.getAlbum()}\n"
-        )
-
-#kulang og duration
-display_sorted_tracks()
+  
