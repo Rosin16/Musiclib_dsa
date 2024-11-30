@@ -27,5 +27,18 @@ class MusicLibrary:
         while left and right:
             comparison = self.compare_tracks(left[0], right[0], key)
 
+            if comparison < 0:
+                sorted_tracks.append(left.pop(0))
+            elif comparison > 0:
+                sorted_tracks.append(right.pop(0))
+            else:
+                sorted_tracks.append(left.pop(0))  
+
+        sorted_tracks.extend(left)
+        sorted_tracks.extend(right)
+
+        return sorted_tracks
+
+
   
   
