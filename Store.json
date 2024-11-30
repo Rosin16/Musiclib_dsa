@@ -125,6 +125,12 @@
             "artist": "Rosin",
             "album": "Zebra",
             "duration": "04:30"
+        },
+        {
+            "title": "Angel Baby",
+            "artist": "Angel",
+            "album": "Zebra",
+            "duration": "04:30"
         }
     ],
     "playlist": []
