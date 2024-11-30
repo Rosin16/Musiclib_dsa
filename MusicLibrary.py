@@ -36,9 +36,10 @@ def display_sorted_tracks():
     data = Main.load_data()  
     tracks = data["tracks"]
 
-
+# nag add kog variables para walay double entries. 
     unique_tracks = []
     seen = set()
+
     for track in tracks:
         track_tuple = (track["title"], track["artist"], track["album"], track["duration"])
         if track_tuple not in seen:
@@ -54,5 +55,5 @@ def display_sorted_tracks():
             f"Track: {track.getTitle()}, Artist: {track.getArtist()}, Album: {track.getAlbum()}\n"
         )
 
-
+#kulang og duration
 display_sorted_tracks()
