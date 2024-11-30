@@ -20,5 +20,12 @@ class MusicLibrary:
         right = self.merge_sort(tracks[mid:], key)
 
         return self.merge(left, right, key)
+    
+    def merge(self, left, right, key):
+        sorted_tracks = []
 
+        while left and right:
+            comparison = self.compare_tracks(left[0], right[0], key)
+
+  
   
