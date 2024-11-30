@@ -101,6 +101,30 @@
             "artist": "Manuel",
             "album": "Gaseous Extended",
             "duration": "04:30"
+        },
+        {
+            "title": "GAS GAS GAS EXTENDED MIX",
+            "artist": "Rosin",
+            "album": "Gaseous Extended",
+            "duration": "04:30"
+        },
+        {
+          "title": "Angel Baby",
+            "artist": "Rosin",
+            "album": "Passed",
+            "duration": "04:30"  
+        },
+        {
+           "title": "Angel Baby",
+            "artist": "Rosin",
+            "album": "Huhuh",
+            "duration": "04:30" 
+        },
+        {
+            "title": "Angel Baby",
+            "artist": "Rosin",
+            "album": "Zebra",
+            "duration": "04:30"
         }
     ],
     "playlist": []

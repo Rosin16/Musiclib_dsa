@@ -38,7 +38,18 @@ class MusicLibrary:
         sorted_tracks.extend(right)
 
         return sorted_tracks
+    
+    def compare_tracks(self, track1, track2, key):
+        if track1[key] != track2[key]:
+            return (track1[key] > track2[key]) - (track1[key] < track2[key])
 
+        attributes = ['title', 'artist', 'album', 'duration', 'id']  
+        for attribute in attributes:
+            if track1[attribute] != track2[attribute]:
+                return (track1[attribute] > track2[attribute]) - (track1[attribute] < track2[attribute])
+
+        return 0
+            
 
   
   
