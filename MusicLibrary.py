@@ -49,6 +49,49 @@ class MusicLibrary:
                 return (track1[attribute] > track2[attribute]) - (track1[attribute] < track2[attribute])
 
         return 0
+    
+    def display_sorted_tracks(self):
+        unique_tracks = []
+        seen = set()
+
+        for track in self.tracks:
+            track_tuple = (track["title"], track["artist"], track["album"], track["duration"])
+            if track_tuple not in seen:
+                seen.add(track_tuple)
+                unique_tracks.append(track)
+
+        sorted_tracks = self.merge_sort(unique_tracks, key="title")
+
+        print("\nTracks:")
+        for track_data in sorted_tracks:
+            track = Track.from_dict(track_data)
+            print(f"Track: {track.getTitle()}, Artist: {track.getArtist()}, Album: {track.getAlbum()}, Duration: {track.getDuration()}")
+
+    def duration_tracks(self):
+        unique_tracks = []
+        seen = set()
+
+        for track in self.tracks:
+            track_tuple = (track["title"], track["artist"], track["album"], track["duration"])
+            if track_tuple not in seen:
+                seen.add(track_tuple)
+                unique_tracks.append(track)
+
+        total_duration = sum(self.convert_duration_to_seconds(track["duration"]) for track in unique_tracks)
+
+        print(f"\nTotal duration of unique tracks: {total_duration} seconds\n")
+
+    def convert_duration_to_seconds(self, duration):
+        """Convert duration in the format 'MM:SS' to seconds."""
+        minutes, seconds = map(int, duration.split(":"))
+        return minutes * 60 + seconds
+
+
+if __name__ == "__main__":
+    library = MusicLibrary()
+    library.display_sorted_tracks()
+    library.duration_tracks()
+
             
 
   
