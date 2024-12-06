@@ -2,10 +2,12 @@ from Track import Track
 from MusicLibrary import MusicLibrary
 from Playlist import Playlist
 
+
 class main:
     def __init__ (self):
         self.library = MusicLibrary()
         self.playlist = Playlist()
+        self.album_tracker = AlbumTracker
 
     @staticmethod
     def prompt(args:str) -> str:

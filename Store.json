@@ -109,16 +109,16 @@
             "duration": "04:30"
         },
         {
-          "title": "Angel Baby",
+            "title": "Angel Baby",
             "artist": "Rosin",
             "album": "Passed",
-            "duration": "04:30"  
+            "duration": "04:30"
         },
         {
-           "title": "Angel Baby",
+            "title": "Angel Baby",
             "artist": "Rosin",
             "album": "Huhuh",
-            "duration": "04:30" 
+            "duration": "04:30"
         },
         {
             "title": "Angel Baby",
@@ -131,7 +131,73 @@
             "artist": "Angel",
             "album": "Zebra",
             "duration": "04:30"
+        },
+        {
+            "title": "Angel Baby",
+            "artist": "Angel",
+            "album": "Zebra",
+            "duration": "04:30",
+            "date_added": "2024-12-01 12:00:00"
+        },
+        {
+            "title": "Angel Baby",
+            "artist": "Rosin",
+            "album": "Huhuh",
+            "duration": "04:30",
+            "date_added": "2024-12-02 12:00:00"
         }
     ],
-    "playlist": []
+    "playlist": [],
+    "Albums": {
+        "Rabbit": [
+            {
+                "id": 1,
+                "title": "Angel Passed",
+                "artist": "Rosin",
+                "album": "Rabbit",
+                "duration": "03:16"
+            }
+        ],
+        "jfbsjf": [
+            {
+                "id": 2,
+                "title": "fsjhff",
+                "artist": "jbfjsflj",
+                "album": "jfbsjf",
+                "duration": "jjj"
+            }
+        ],
+        "kfjsf": [
+            {
+                "id": 3,
+                "title": "jasfgj",
+                "artist": "jafjf",
+                "album": "kfjsf",
+                "duration": "jsgj"
+            }
+        ]
+    },
+    "Tracks": [
+        {
+            "id": 1,
+            "title": "Angel Passed",
+            "artist": "Rosin",
+            "album": "Rabbit",
+            "duration": "03:16"
+        },
+        {
+            "id": 2,
+            "title": "fsjhff",
+            "artist": "jbfjsflj",
+            "album": "jfbsjf",
+            "duration": "jjj"
+        },
+        {
+            "id": 3,
+            "title": "jasfgj",
+            "artist": "jafjf",
+            "album": "kfjsf",
+            "duration": "jsgj"
+        }
+    ]
 }
