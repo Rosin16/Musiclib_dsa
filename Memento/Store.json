@@ -1,0 +1,46 @@
+{
+    "Tracks": [
+        {
+            "id": 1,
+            "title": "Let it Grow",
+            "artist": "Lorax Singers",
+            "album": "Dr.Seus'The Lorax",
+            "duration": "03:30"
+        },
+        {
+            "id": 2,
+            "title": "asdad",
+            "artist": "asdad",
+            "album": "asdasd",
+            "duration": "123"
+        },
+        {
+            "id": 3,
+            "title": "sdasdas",
+            "artist": "asdada",
+            "album": "asdasd",
+            "duration": "123"
+        },
+        {
+            "id": 4,
+            "title": "Hello",
+            "artist": "Hi",
+            "album": "World",
+            "duration": "123"
+        },
+        {
+            "id": 5,
+            "title": "Hello",
+            "artist": "Hi",
+            "album": "World",
+            "duration": "123"
+        },
+        {
+            "id": 6,
+            "title": "huiee",
+            "artist": "huiie",
+            "album": "hmpp",
+            "duration": "432"
+        }
+    ]
+}
